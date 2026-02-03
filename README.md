@@ -8,7 +8,7 @@ A beautiful, real-time weather dashboard for the command line. Get current condi
 🌡️ **Real-time Weather** - Current temperature, humidity, and wind speed
 ⛅ **Weather Icons** - Visual representations of weather conditions
 📅 **7-Day Forecast** - High/low temperatures and weather predictions
-🌍 **Automatic Location** - Uses your coordinates (currently set to London, UK)
+🌍 **Automatic Location** - Detects your location via IP geolocation
 
 ## Installation
 
@@ -48,14 +48,13 @@ Edit `index.js` to:
 ## Example Output
 
 ```
-┌─────────────────────────────┐
-│  ___  _    ___  ___ ___    │
-│ |  \ | |  |__  |    |      │
-│ |  | | |__  __ |    |      │
-│ |__/ |____|    |__  |___   │
-└─────────────────────────────┘
+ __        _______    _  _____ _   _ _____ ____  
+ \ \      / / ____|  / \|_   _| | | | ____|  _ \ 
+  \ \ /\ / /|  _|   / _ \ | | | |_| |  _| | |_) |
+   \ V  V / | |___ / ___ \| | |  _  | |___|  _ < 
+    \_/\_/  |_____/_/   \_\_| |_| |_|_____|_| \_\
 
-📍 London, UK
+📍 New Haven, United States
 
 Current Weather:
   ⛅ Partly cloudy
