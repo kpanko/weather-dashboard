@@ -1,64 +1,8 @@
 #!/usr/bin/env node
 
-const axios = require('axios');
 const chalk = require('chalk').default || require('chalk');
 const figlet = require('figlet');
-
-const API_KEY = process.env.WEATHER_API_KEY || 'demo';
-const BASE_URL = 'https://api.open-meteo.com/v1/forecast';
-
-async function getLocation() {
-  try {
-    const response = await axios.get('https://ipapi.co/json/');
-    return {
-      latitude: response.data.latitude,
-      longitude: response.data.longitude,
-      city: response.data.city,
-      country: response.data.country_name,
-    };
-  } catch (error) {
-    console.error(chalk.red(`Error detecting location: ${error.message}`));
-    process.exit(1);
-  }
-}
-
-async function getWeather(latitude, longitude) {
-  try {
-    const response = await axios.get(BASE_URL, {
-      params: {
-        latitude,
-        longitude,
-        current: 'temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m',
-        hourly: 'temperature_2m',
-        daily: 'weather_code,temperature_2m_max,temperature_2m_min',
-        timezone: 'auto',
-      },
-    });
-
-    return response.data;
-  } catch (error) {
-    console.error(chalk.red(`Error fetching weather: ${error.message}`));
-    process.exit(1);
-  }
-}
-
-function getWeatherDescription(code) {
-  const descriptions = {
-    0: '☀️  Clear sky',
-    1: '🌤️  Mostly clear',
-    2: '⛅ Partly cloudy',
-    3: '☁️  Overcast',
-    45: '🌫️  Foggy',
-    48: '🌫️  Foggy (rime)',
-    51: '🌧️  Light drizzle',
-    61: '🌧️  Slight rain',
-    63: '🌧️  Moderate rain',
-    65: '🌧️  Heavy rain',
-    71: '🌨️  Slight snow',
-    80: '⛈️  Thunderstorm',
-  };
-  return descriptions[code] || '🌡️  Unknown';
-}
+const { getLocation, getWeather, getWeatherDescription } = require('./weather');
 
 async function displayWeather() {
   console.clear();
