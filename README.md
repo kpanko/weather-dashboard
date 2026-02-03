@@ -4,10 +4,10 @@ A beautiful, real-time weather dashboard for the command line. Get current condi
 
 ## Features
 
-✨ **Beautiful Terminal UI** - ASCII art headers and colored output
-🌡️ **Real-time Weather** - Current temperature, humidity, and wind speed
-⛅ **Weather Icons** - Visual representations of weather conditions
-📅 **7-Day Forecast** - High/low temperatures and weather predictions
+✨ **Beautiful Terminal UI** - ASCII art headers and colored output  
+🌡️ **Real-time Weather** - Current temperature, humidity, and wind speed  
+⛅ **Weather Icons** - Visual representations of weather conditions  
+📅 **7-Day Forecast** - High/low temperatures and weather predictions  
 🌍 **Automatic Location** - Detects your location via IP geolocation
 
 ## Installation
